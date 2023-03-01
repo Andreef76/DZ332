@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DZ332</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums"><span class="pc" id="L1">var typeCards = &quot;MIR&quot;            //  &quot;VK_Pay&quot;  &quot;MasterCard&quot;  &quot;Maestro&quot;  &quot;Visa&quot;   &quot;MIR&quot;</span>
+<span class="pc" id="L2">var amountTransfersMonth = 200000     // СЃСѓРјРјР° РїСЂРµРґС‹РґСѓС‰РёС… РїРµСЂРµРІРѕРґРѕРІ РІ РјРµСЃСЏС†</span>
+<span class="pc" id="L3">var translation = 500000            // С‚РµРєСѓС‰РёР№ РїРµСЂРµРІРѕРґ</span>
+
+fun main(){
+<span class="nc" id="L6">    println(textToScreen(typeCards, translation, amountTransfersMonth))</span>
+<span class="nc" id="L7">}</span>
+
+fun textToScreen(typeCard: String, translation: Int, amountTransfersMonth: Int): String {
+<span class="fc bfc" id="L10" title="All 4 branches covered.">    if (commissionCalculation(typeCard, translation, amountTransfersMonth) == -1.0) {</span>
+<span class="fc" id="L11">        return (&quot;Р’С‹ РїСЂРµРІС‹СЃРёР»Рё СЃСѓРјРјСѓ РґРѕРїСѓСЃС‚РёРјС‹С… РїР»Р°С‚РµР¶РµР№ РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ&quot;)</span>
+    } else {
+<span class="fc" id="L13">        return (</span>
+<span class="fc" id="L14">            &quot;- РўРёРї РєР°СЂС‚С‹ - $typeCard \n&quot; +</span>
+<span class="fc" id="L15">                    &quot;- РЎСѓРјРјР° РїСЂРµРґС‹РґСѓС‰РёС… РїРµСЂРµРІРѕРґРѕРІ РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ - $amountTransfersMonth \n&quot; +</span>
+<span class="fc" id="L16">                    &quot;- РЎСѓРјРјР° СЃРѕРІРµСЂС€Р°РµРјРѕРіРѕ РїРµСЂРµРІРѕРґР° - $translation \n&quot; +</span>
+                    &quot;- РљРѕРјРёСЃСЃРёСЏ Р·Р° С‚РµРєСѓС‰РёР№ РїРµСЂРµРІРѕРґ - ${
+<span class="fc" id="L18">                        commissionCalculation(typeCard, translation, amountTransfersMonth</span>
+                        )
+                    }&quot;
+        )
+    }
+}
+fun commissionCalculation(typeCard: String, translation: Int, amountTransfersMonth: Int): Double {
+<span class="fc bfc" id="L25" title="All 2 branches covered.">    if ((amountTransfersMonth + translation) &lt;= 600000) {</span>
+<span class="pc bpc" id="L26" title="4 of 13 branches missed.">        return when (typeCard) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; if (translation &lt;= 75000) 0.0 else (translation * 0.006 + 20)</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            &quot;Visa&quot;, &quot;MIR&quot; -&gt; (if (translation * 0.0075 &lt; 35) 35 else translation * 0.0075).toDouble()</span>
+<span class="fc" id="L29">            else -&gt; 0.0</span>
+        }
+    } else {
+<span class="fc" id="L32">        return -1.0</span>
+    }
+}
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
