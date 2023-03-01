@@ -1,6 +1,9 @@
+
 plugins {
     kotlin("jvm") version "1.8.0"
     application
+    jacoco
+    java
 }
 
 group = "ru.nitology"
@@ -11,12 +14,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib")
+    testImplementation ("junit:junit:4.13.2")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+
 
 kotlin {
     jvmToolchain(8)
