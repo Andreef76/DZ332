@@ -84,7 +84,7 @@ class MainKtTest {
     fun commissionCalculationLimit() {
         val typeCards = "VK_Pay"
         val translation = 500000
-        val amountTransfersMonth = 100001
+        val amountTransfersMonth = 10000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
         assertEquals(-1, result.toInt())
@@ -94,7 +94,7 @@ class MainKtTest {
     fun texToScreenTestExceeding() {
         val typeCard = "VK_Pay"
         val transaction = 500000
-        val amountTransfersMonth = 100001
+        val amountTransfersMonth = 10000
         val result = textToScreen(typeCard, transaction, amountTransfersMonth)
         assertEquals("Вы превысили сумму допустимых платежей в этом месяце", result)
     }

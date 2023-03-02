@@ -1,6 +1,6 @@
-var typeCards = "MIR"            //  "VK_Pay"  "MasterCard"  "Maestro"  "Visa"   "MIR"
-var amountTransfersMonth = 200000     // сумма предыдущих переводов в месяц
-var translation = 500000            // текущий перевод
+var typeCards = "Maestro"            //  "VK_Pay"  "MasterCard"  "Maestro"  "Visa"   "MIR"
+var amountTransfersMonth = 20000     // сумма предыдущих переводов в месяц
+var translation = 400000            // текущий перевод
 
 fun main(){
     println(textToScreen(typeCards, translation, amountTransfersMonth))
