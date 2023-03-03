@@ -16,10 +16,6 @@ class MainKtTest {
     fun commissionCalculationTestCardVisaProcent() {
         val typeCards = "Visa"
         val translation = 10000
-        // тоже проверку проходит хотя число не получаем
-        //я про вот это) понял зато при этом варианте все верно считате ок
-
-
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
         assertEquals(75.0, result, 0.01)
     }
