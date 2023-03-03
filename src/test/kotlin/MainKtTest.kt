@@ -10,15 +10,18 @@ class MainKtTest {
         val translation = 100
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(35, result.toInt())
+        assertEquals(35.0, result, 0.01)
     }
     @Test
     fun commissionCalculationTestCardVisaProcent() {
         val typeCards = "Visa"
         val translation = 10000
+        // тоже проверку проходит хотя число не получаем
+        //я про вот это) понял зато при этом варианте все верно считате ок
+
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(75, result.toInt())
+        assertEquals(75.0, result, 0.01)
     }
     @Test
     fun commissionCalculationTestCardMir() {
@@ -26,7 +29,7 @@ class MainKtTest {
         val translation = 100
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(35, result.toInt())
+        assertEquals(35.0, result, 0.01)
     }
     @Test
     fun commissionCalculationTestCardMirProcent() {
@@ -34,7 +37,8 @@ class MainKtTest {
         val translation = 10000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(75, result.toInt())
+        assertEquals(75.0, result, 0.01)
+
     }
 
     @Test
@@ -43,7 +47,7 @@ class MainKtTest {
         val translation = 80000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(500, result.toInt())
+        assertEquals(500.0, result, 0.01)
     }
 
     @Test
@@ -52,7 +56,7 @@ class MainKtTest {
         val translation = 70000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(0, result.toInt())
+        assertEquals(0.0, result, 0.01)
     }
     @Test
     fun commissionCalculationTestCardMasterCardProcent() {
@@ -60,7 +64,7 @@ class MainKtTest {
         val translation = 80000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(500, result.toInt())
+        assertEquals(500.0, result, 0.01)
     }
     @Test
     fun commissionCalculationTestCardMasterCard() {
@@ -68,7 +72,7 @@ class MainKtTest {
         val translation = 70000
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(0, result.toInt())
+        assertEquals(0.0, result, 0.01)
     }
 
     @Test
@@ -77,7 +81,7 @@ class MainKtTest {
         val translation = 100
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(0, result.toInt())
+        assertEquals(0.0, result, 0.01)
     }
 
     @Test
@@ -87,7 +91,7 @@ class MainKtTest {
         val amountTransfersMonth = 100001
 
         val result = commissionCalculation(typeCards, translation, amountTransfersMonth)
-        assertEquals(-1, result.toInt())
+        assertEquals(-1.0, result, 0.01)
     }
 
     @Test

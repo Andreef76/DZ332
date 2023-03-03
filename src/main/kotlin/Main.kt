@@ -1,4 +1,4 @@
-var typeCards = "Maestro"            //  "VK_Pay"  "MasterCard"  "Maestro"  "Visa"   "MIR"
+var typeCards = "VK_Pay"            //  "VK_Pay"  "MasterCard"  "Maestro"  "Visa"   "MIR"
 var amountTransfersMonth = 20000     // сумма предыдущих переводов в месяц
 var translation = 400000            // текущий перевод
 
